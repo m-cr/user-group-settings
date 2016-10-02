@@ -13,7 +13,11 @@ angular.module('app')
 			},
 
 			logout: function(){
-				return $http.delete('/api/sessions');
+				angular.copy({}, _user);
+				return $http.delete('/api/sessions')
+					.then(function(success){
+						return this.me
+					});
 			},
 
 			me: function(){
@@ -24,4 +28,7 @@ angular.module('app')
 					});
 			}
 		};
-	});
+	})
+	.run(function(AuthService){
+		AuthService.me();
+	})

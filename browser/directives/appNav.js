@@ -5,12 +5,11 @@ angular.module('app')
 			controller: function($scope, $state, AuthService, UserService){
 				$scope.user = AuthService.user;
 				$scope.logout = function(){
-					AuthService.logout()
-						.then(function(){
-							$scope.user = AuthService.me();
-							$state.go('home');
-						});
-				};
-			}
-		};
-	});
+				AuthService.logout()
+					.then(function(){
+						$state.go('home');
+					});
+			};
+		}
+	};
+});
