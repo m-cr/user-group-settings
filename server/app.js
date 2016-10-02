@@ -7,7 +7,7 @@ var app = express();
 var path = require('path');
 
 app.use(session({
-	secret: 'mikenpat'
+	secret: process.env.SECRET
 }));
 
 app.use(function(req, res, next) {

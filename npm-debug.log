@@ -1,0 +1,48 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/MCRW/.nvm/versions/node/v6.2.1/bin/node',
+1 verbose cli   '/Users/MCRW/.nvm/versions/node/v6.2.1/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'start:dev' ]
+2 info using npm@3.9.3
+3 info using node@v6.2.1
+4 verbose run-script [ 'prestart:dev', 'start:dev', 'poststart:dev' ]
+5 info lifecycle user-group-settings@1.0.0~prestart:dev: user-group-settings@1.0.0
+6 silly lifecycle user-group-settings@1.0.0~prestart:dev: no script for prestart:dev, continuing
+7 info lifecycle user-group-settings@1.0.0~start:dev: user-group-settings@1.0.0
+8 verbose lifecycle user-group-settings@1.0.0~start:dev: unsafe-perm in lifecycle true
+9 verbose lifecycle user-group-settings@1.0.0~start:dev: PATH: /Users/MCRW/.nvm/versions/node/v6.2.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/MCRW/FullStackBootCamp/user-group-settings/node_modules/.bin:/Users/MCRW/.nvm/versions/node/v6.2.1/bin:/Users/MCRW/.nvm/versions/node/v6.2.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin
+10 verbose lifecycle user-group-settings@1.0.0~start:dev: CWD: /Users/MCRW/FullStackBootCamp/user-group-settings
+11 silly lifecycle user-group-settings@1.0.0~start:dev: Args: [ '-c',
+11 silly lifecycle   'PORT=3000 SECRET:mikenpat DATABASE_URL=postgres://localhost/user_group_settings SYNC=false nodemon server' ]
+12 info lifecycle user-group-settings@1.0.0~start:dev: Failed to exec start:dev script
+13 verbose stack Error: user-group-settings@1.0.0 start:dev: `PORT=3000 SECRET:mikenpat DATABASE_URL=postgres://localhost/user_group_settings SYNC=false nodemon server`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/Users/MCRW/.nvm/versions/node/v6.2.1/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at ChildProcess.emit (events.js:191:7)
+13 verbose stack     at maybeClose (internal/child_process.js:852:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+14 verbose pkgid user-group-settings@1.0.0
+15 verbose cwd /Users/MCRW/FullStackBootCamp/user-group-settings
+16 error Darwin 15.6.0
+17 error argv "/Users/MCRW/.nvm/versions/node/v6.2.1/bin/node" "/Users/MCRW/.nvm/versions/node/v6.2.1/bin/npm" "run" "start:dev"
+18 error node v6.2.1
+19 error npm  v3.9.3
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error user-group-settings@1.0.0 start:dev: `PORT=3000 SECRET:mikenpat DATABASE_URL=postgres://localhost/user_group_settings SYNC=false nodemon server`
+24 error spawn ENOENT
+25 error Failed at the user-group-settings@1.0.0 start:dev script 'PORT=3000 SECRET:mikenpat DATABASE_URL=postgres://localhost/user_group_settings SYNC=false nodemon server'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the user-group-settings package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     PORT=3000 SECRET:mikenpat DATABASE_URL=postgres://localhost/user_group_settings SYNC=false nodemon server
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs user-group-settings
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls user-group-settings
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]
