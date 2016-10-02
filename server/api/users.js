@@ -10,3 +10,15 @@ router.get('/', function(req, res, next){
 	})
 	.catch(next);
 });
+
+router.put('/:id', function(req, res, next){
+	User.update({
+			groupId: req.body.id
+		}, {
+			where: {id: req.params.id}
+		})
+		.then(function(updatedUser){
+			res.send(updatedUser);
+		})
+		.catch(next);
+});
