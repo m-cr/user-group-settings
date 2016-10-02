@@ -9,10 +9,12 @@ angular.module('UGS')
 			})
 			.state('users', {
 				url: '/users',
-				templateUrl: '/users/user.html'
+				templateUrl: '/users/user.html',
+				controller: 'UserCtrl'
 			})
 			.state('groups',{
 				url: '/groups',
-				templateUrl: '/groups/group.html' 
+				templateUrl: '/groups/group.html',
+				controller: 'GroupCtrl' 
 			});
 	});

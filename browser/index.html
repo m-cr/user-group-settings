@@ -7,16 +7,20 @@
 		<script src='/angular-ui-router/release/angular-ui-router.js'></script>
 		<script src='./app.js'></script>
 		<!-- group files --> 
-		<script src='/group/group.controller.js'></script>
-		<script src='/group/group.factory.js'></script>
+		<script src='/groups/group.controller.js'></script>
+		<script src='/groups/group.factory.js'></script>
 		<!-- user files -->
-		<script src='/user/user.controller.js'></script>
-		<script src='/user/user.factory.js'></script>
+		<script src='/users/user.controller.js'></script>
+		<script src='/users/user.factory.js'></script>
 
 	</head>
 
-	<div class='well'>
-		{{ 10 X 10 }}
+	<div class='container'>
+		<ul class='nav nav-tabs'>
+			<li role='presentation' ui-sref-active='active'> <a ui-sref='home'> Home </a> </li>
+			<li role='presentation' ui-sref-active='active'> <a ui-sref='users'> User </a> </li>
+			<li role='presentation' ui-sref-active='active'> <a ui-sref='groups'> Groups </a> </li>
+		</ul>
+		<ui-view></ui-view>
 	</div>
-
 </html>
