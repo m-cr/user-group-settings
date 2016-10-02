@@ -18,8 +18,8 @@ var seed = function(){
 		Group.create({name: 'Developer'}),
 		Group.create({name: 'Admin'}),
 		Group.create({name: 'HR'}),
-		User.create({name: 'Mike', groupId: 1}),
-		User.create({name: 'Pat', groupId: 2})
+		User.create({name: 'Mike', password: '1234', groupId: 1}),
+		User.create({name: 'Pat', password: '5678', groupId: 2})
 	]);
 };
 

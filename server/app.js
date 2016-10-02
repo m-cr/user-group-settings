@@ -12,4 +12,6 @@ app.get('/', function(req, res, next){
 	res.sendFile(path.join(__dirname, '../browser/index.html'));
 });
 
+app.use('/api', require('./api'));
+
 module.exports = app;
