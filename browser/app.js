@@ -5,7 +5,7 @@ angular.module('UGS')
 		$stateProvider
 			.state('home',{
 				url: '/',
-				templateUrl: 'index.html'
+				templateUrl: '/home/home.html'
 			})
 			.state('users', {
 				url: '/users',
