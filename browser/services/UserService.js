@@ -21,5 +21,4 @@ angular.module('app')
 					return status.data
 				});
 		}
-
 	});

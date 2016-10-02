@@ -32,7 +32,7 @@ angular.module('app')
 			.state('settings',{
 				url: '/settings',
 				templateUrl: '/templates/settings.html',
-				controller: function($scope, GroupService, UserService){
+				controller: function($scope, AuthService, GroupService, UserService){
 					GroupService.findAll()
 						.then(function(groups){
 							$scope.groups = groups;
@@ -45,16 +45,20 @@ angular.module('app')
 						if ($scope.group == groupId) {
 							return true;
 						}
-					}
-					
+					};
+
+					AuthService.me()
+					.then(function(me){
+						$scope.group = me.groupId;
+					});	
+
 					$scope.addGroup = function(groupId){
 						UserService.addGroup($scope.user.id, groupId)
 							.then(function(userGroup){
 								$scope.group = groupId;
 								console.log('controller success', userGroup);
 							});
-					}
-
+					};
 				}
 			});
 	});
