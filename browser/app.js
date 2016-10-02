@@ -14,10 +14,10 @@ angular.module('app')
 					$scope.login = function(){
 						console.log('controller login function');
 						AuthService.login($scope.credentials)
-						.then(function(){
-							$state.go('/');
+						.then(function(result){
+							$state.go('home');
 						})
-						.catch('/login')
+						.catch()
 					}
 				}
 			})
