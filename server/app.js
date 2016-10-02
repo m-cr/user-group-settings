@@ -10,6 +10,11 @@ app.use(session({
 	secret: 'mikenpat'
 }));
 
+app.use(function(req, res, next) {
+	console.log('session', req.session);
+	next();
+});
+
 app.use(express.static(path.join(__dirname, '../node_modules')));
 app.use(express.static(path.join(__dirname, '../browser')));
 

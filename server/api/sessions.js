@@ -21,7 +21,8 @@ router.post('/', function(req, res, next){
 });
 
 router.delete('/', function(req, res, next){
-	req.session.userId = '';
+	req.session.destroy();
+	res.sendStatus(200);
 });
 
 router.get('/', function(req, res, next){
