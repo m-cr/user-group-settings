@@ -1,0 +1,33 @@
+//user and group
+//user belongs to group
+//session object w user id
+//call delete on session
+//test back end or use postman
+//front end stub out services(just return something for test)
+//1 get route for groups
+//put for user.usergroups.id 
+
+STUB PATTERN FOR FRONT END SERVICES:
+
+findAll: function(){
+	
+	//   TO DO - WIRE UP BACK END   //
+
+	var dfd = $q.defer();
+	dfd.resolve([
+		{id: 1, name: 'moe'},
+		{id: 2, name: 'larry'}
+	]);  // send something
+
+	// dfd.resolve([]);  //send nothing
+
+	return dfd.promise;
+	
+}
+
+<body ng-app='app'>
+	<div class='container'>
+		<app-nav></app-nav> // directive
+		<ui-view></ui-view> // ui-view
+	</div
+</body>
