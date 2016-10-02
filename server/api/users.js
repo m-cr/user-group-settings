@@ -12,13 +12,14 @@ router.get('/', function(req, res, next){
 });
 
 router.put('/:id', function(req, res, next){
+	console.log(req.body.name);
 	User.update({
-			groupId: req.body.id
+			name: req.body.name
 		}, {
 			where: {id: req.params.id}
 		})
-		.then(function(updatedUser){
-			res.send(updatedUser);
+		.then(function(){
+			console.log('updated');
 		})
 		.catch(next);
 });
