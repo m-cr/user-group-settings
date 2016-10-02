@@ -6,20 +6,18 @@
 		<script src='/angular/angular.js'></script>
 		<script src='/angular-ui-router/release/angular-ui-router.js'></script>
 		<script src='./app.js'></script>
-		<!-- group files --> 
-		<script src='/groups/group.controller.js'></script>
-		<script src='/groups/group.factory.js'></script>
-		<!-- user files -->
-		<script src='/users/user.controller.js'></script>
-		<script src='/users/user.factory.js'></script>
+		<script src='/services/AuthService.js'></script>
+		<script src='/services/GroupService.js'></script>
+		<script src='/services/UserService.js'></script>
 
 	</head>
 
-	<div ng-app='UGS' class='container'>
+	<div ng-app='app' class='container'>
 		<ul class='nav nav-tabs'>
 			<li role='presentation' ui-sref-active='active'> <a ui-sref='home'> Home </a> </li>
-			<li role='presentation' ui-sref-active='active'> <a ui-sref='users'> User </a> </li>
-			<li role='presentation' ui-sref-active='active'> <a ui-sref='groups'> Groups </a> </li>
+			<li ng-if="user.id" role='presentation' ui-sref-active='active'> <a ui-sref='settings'> Settings </a> </li>
+			<li ng-if="user.id" role='presentation' ui-sref-active='active'> <a ng-click="logout()" ui-sref='settings'> Settings </a> </li>
+			<li ng-if="!user.id" role='presentation' ui-sref-active='active'> <a ui-sref='login'> Login </a> </li>
 		</ul>
 		<ui-view></ui-view>
 	</div>

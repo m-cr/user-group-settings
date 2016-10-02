@@ -1,4 +1,4 @@
-angular.module('UGS')
+angular.module('app')
 	.factory('UserService', function($http){
 		var _users = {};
 		return {

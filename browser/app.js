@@ -1,20 +1,31 @@
-angular.module('UGS', ['ui.router']);
+angular.module('app', ['ui.router']);
 
-angular.module('UGS')
+angular.module('app')
 	.config(function($stateProvider, $urlRouterProvider){
 		$stateProvider
 			.state('home',{
 				url: '/',
-				templateUrl: '/home/home.html'
+				templateUrl: '/templates/home.html'
 			})
-			.state('users', {
-				url: '/users',
-				templateUrl: '/users/user.html',
-				controller: 'UserCtrl'
+			.state('login', {
+				url: '/login',
+				templateUrl: '/templates/login.html',
+				controller: function($scope, $state, AuthService){
+					$scope.login = function(){
+						console.log('controller login function');
+						AuthService.login($scope.credentials)
+						.then(function(){
+							$state.go('/');
+						})
+						.catch('/login')
+					}
+				}
 			})
-			.state('groups',{
-				url: '/groups',
-				templateUrl: '/groups/group.html',
-				controller: 'GroupCtrl' 
+			.state('settings',{
+				url: '/settings',
+				templateUrl: '/templates/settings.html',
+				controller: function($scope){
+
+				}
 			});
 	});
