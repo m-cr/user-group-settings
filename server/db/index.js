@@ -1,19 +1,13 @@
-var Sequelize = require('sequelize');
-
-var db = new Sequelize(process.env.DATABASE_URL, {logging: false});
+var db = require('./_db');
 
 var Promise = require('bluebird');
 
-var User = db.define('user', {
-	name: Sequelize.STRING
-});
+var User = require('./users');
 
-var Group = db.define('group', {
-	name: Sequelize.STRING
-});
+var Group = require('./groups');
 
-User.hasMany(Group);
-Group.belongsTo(User);
+Group.hasMany(User);
+User.belongsTo(Group);
 
 var sync = function(){
 	return db.sync({force: true});
@@ -21,12 +15,12 @@ var sync = function(){
 
 var seed = function(){
 	return Promise.all([
-		User.create({name: 'Mike'}),
-		User.create({name: 'Pat'}),
 		Group.create({name: 'Developer'}),
 		Group.create({name: 'Admin'}),
-		Group.create({name: 'HR'})
-	])
+		Group.create({name: 'HR'}),
+		User.create({name: 'Mike', groupId: 1}),
+		User.create({name: 'Pat', groupId: 2})
+	]);
 };
 
 module.exports = {
