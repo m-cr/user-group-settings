@@ -31,3 +31,16 @@ findAll: function(){
 		<ui-view></ui-view> // ui-view
 	</div
 </body>
+
+
+
+db file
+sequelize attach to db
+export db
+db/index
+db/user
+db/_db
+
+routes/index
+routes/groups
+routes/users
