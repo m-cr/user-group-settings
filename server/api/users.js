@@ -18,7 +18,6 @@ router.put('/:id', function(req, res, next){
 			where: {id: req.params.id}
 		})
 		.then(function(row){
-			console.log(row[1]);
 			res.sendStatus(200);
 		})
 		.catch(next);
