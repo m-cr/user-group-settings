@@ -1,7 +1,7 @@
 var db = require('./db');
 
-var server = require('http').createServer(require('./pp'));
-
+var server = require('http').createServer(require('./app'));
+var PORT = process.env.PORT || 3000;
 // if(process.env.SYNC === 'true'){
 // 	console.log('seeding');
 // 	db.sync()
@@ -13,6 +13,6 @@ var server = require('http').createServer(require('./pp'));
 // 	})
 // }
 
-server.listen(process.env.PORT, function(){
-	console.log('listening on port ', process.env.PORT);
+server.listen(PORT, function(){
+	console.log('listening on port ', PORT);
 });
