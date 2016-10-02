@@ -4,5 +4,5 @@ angular.module('app')
 			login: function(credentials){
 				console.log('someone tried to login w/ ', credentials);
 			}
-		}
-	})
+		};
+	});

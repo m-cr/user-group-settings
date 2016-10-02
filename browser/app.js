@@ -17,8 +17,8 @@ angular.module('app')
 						.then(function(){
 							$state.go('/');
 						})
-						.catch('/login')
-					}
+						.catch('/login');
+					};
 				}
 			})
 			.state('settings',{
