@@ -4,5 +4,5 @@ angular.module('app')
 			login: function(credentials){
 				return true
 			}
-		}
-	})
+		};
+	});

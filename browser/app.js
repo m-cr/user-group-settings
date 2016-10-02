@@ -19,6 +19,8 @@ angular.module('app')
 						})
 						.catch()
 					}
+						.catch('/login');
+					};
 				}
 			})
 			.state('settings',{

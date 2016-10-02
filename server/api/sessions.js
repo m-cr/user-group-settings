@@ -12,10 +12,27 @@ router.post('/', function(req, res, next){
 	})
 	.then(function(user){
 		if(user){
-			req.session.user = user;
+			req.session.userId = user.id;
 			return res.send(user);
 		}
 		return res.sendStatus(401);
 	})
 	.catch(next);
-})
+});
+
+router.delete('/', function(req, res, next){
+	req.session.userId = '';
+});
+
+router.get('/', function(req, res, next){
+	User.findOne({
+		where: {
+			id: req.session.userId
+		}
+	})
+	.then(function(user){
+		res.send(user);
+	})
+	.catch(next);
+});
+
