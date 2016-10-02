@@ -32,15 +32,29 @@ angular.module('app')
 			.state('settings',{
 				url: '/settings',
 				templateUrl: '/templates/settings.html',
-				controller: function($scope, GroupService){
+				controller: function($scope, GroupService, UserService){
 					GroupService.findAll()
 						.then(function(groups){
-							console.log(groups);
 							$scope.groups = groups;
 						})
 						.catch(function(err){
 							console.log(err);
 						});
+
+					$scope.hasGroup = function(groupId){
+						if ($scope.group == groupId) {
+							return true;
+						}
+					}
+					
+					$scope.addGroup = function(groupId){
+						UserService.addGroup($scope.user.id, groupId)
+							.then(function(userGroup){
+								$scope.group = groupId;
+								console.log('controller success', userGroup);
+							});
+					}
+
 				}
 			});
 	});
