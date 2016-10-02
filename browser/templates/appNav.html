@@ -1,0 +1,8 @@
+<div class='container'>
+	<ul class='nav nav-tabs'>
+		<li role='presentation' ui-sref-active='active'> <a ui-sref='home'> Home </a> </li>
+		<li ng-if="user.id" role='presentation' ui-sref-active='active'> <a ui-sref='settings'> Settings </a> </li>
+		<li ng-if="user.id" role='presentation' ui-sref-active='active'> <a ng-click="logout()"> Logout </a> </li>
+		<li ng-if="!user.id" role='presentation' ui-sref-active='active'> <a ui-sref='login'> Login </a> </li>
+	</ul>
+</div>

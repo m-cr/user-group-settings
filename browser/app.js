@@ -5,21 +5,27 @@ angular.module('app')
 		$stateProvider
 			.state('home',{
 				url: '/',
-				templateUrl: '/templates/home.html'
+				templateUrl: '/templates/home.html',
+				controller: function($scope, UserService){
+					UserService.findAll()
+						.then(function(users){
+							$scope.users = users;
+						})
+						.catch(function(err){
+							console.log(err);
+						});
+				}
 			})
 			.state('login', {
 				url: '/login',
 				templateUrl: '/templates/login.html',
 				controller: function($scope, $state, AuthService){
 					$scope.login = function(){
-						console.log('controller login function');
 						AuthService.login($scope.credentials)
 						.then(function(result){
 							$state.go('home');
 						})
-						.catch()
-					}
-						.catch('/login');
+						.catch();
 					};
 				}
 			})

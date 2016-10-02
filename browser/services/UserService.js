@@ -1,9 +1,8 @@
 angular.module('app')
 	.factory('UserService', function($http){
-		var _users = {};
+		var _users = [];
 		return {
-			findAll: findAll,
-			create: create
+			findAll: findAll
 		};
 
 		function findAll(){
@@ -12,13 +11,6 @@ angular.module('app')
 					angular.copy(users.data, _users);
 					return _users;
 				});
-		};
-
-		function create(user){
-			return $http.post('api/users', {})
-				.then(function(user){
-					return _users; 
-				})
 		};
 
 	});
