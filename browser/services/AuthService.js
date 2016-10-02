@@ -13,11 +13,15 @@ angular.module('app')
 			},
 
 			logout: function(){
-				var dfd = $q.defer();
-				angular.copy({}, _user);
-				dfd.resolve();
-				return dfd.promise;
-				//TODO add logout after route is created
+				return $http.delete('/api/sessions');
+			},
+
+			me: function(){
+				return $http.get('/api/sessions')
+					.then(function(user){
+						angular.copy(user.data, _user);
+						return _user;
+					});
 			}
 		};
 	});

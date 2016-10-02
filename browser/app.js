@@ -32,8 +32,15 @@ angular.module('app')
 			.state('settings',{
 				url: '/settings',
 				templateUrl: '/templates/settings.html',
-				controller: function($scope){
-
+				controller: function($scope, GroupService){
+					GroupService.findAll()
+						.then(function(groups){
+							console.log(groups);
+							$scope.groups = groups;
+						})
+						.catch(function(err){
+							console.log(err);
+						});
 				}
 			});
 	});

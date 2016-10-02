@@ -7,6 +7,7 @@ angular.module('app')
 				$scope.logout = function(){
 					AuthService.logout()
 						.then(function(){
+							$scope.user = AuthService.me();
 							$state.go('home');
 						});
 				};
